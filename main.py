@@ -198,4 +198,4 @@ except:
     print("No rate limit")
 
 keep_alive()
-client.run(os.getenv('TOKEN'))
+client.run(os.getenv('ODYzOTkzMzA1MDA4NDM5MzA2.YOu-eA.dpJZK2AiHTTcb0YWrwm3uFaVWGA'))
