@@ -35,8 +35,6 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
           
-      - name: Hello world action
+      - name: Token
         with: # Set the secret as an input
-          super_secret: ${{secrets.PASSWORD}}
-        env: # Or as an environment variable
-          super_secret: ${{secrets.PASSWORD}}
+          password: ${{secrets.PASSWORD}}
