@@ -25,4 +25,6 @@ jobs:
       - name: Normal
         env: 
           PASSWORD: ${{ secrets.PASSWORD }}
+        run: 
+          Normal
           
