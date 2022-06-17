@@ -198,4 +198,4 @@ except:
     print("No rate limit")
 
 keep_alive()
-client.run(os.getenv(${{secrets.PASSWORD}}))
+client.run(${{secrets.PASSWORD}})
