@@ -1,4 +1,4 @@
-name: C
+name: CI
 
 # Controls when the workflow will run
 on:
@@ -28,5 +28,5 @@ jobs:
         env: 
           PASSWORD: ${{ secrets.PASSWORD }}
         run: 
-          Normal
+          main.py
           
