@@ -197,4 +197,4 @@ try:
 except:
     print("No rate limit")
 
-bot.run("ODYzOTkzMzA1MDA4NDM5MzA2.GrVFoo.Ut0ScGUvwHAMBLL5cy3USQHJw1cTbtikC_sias")
+bot.run(ODYzOTkzMzA1MDA4NDM5MzA2.GrVFoo.Ut0ScGUvwHAMBLL5cy3USQHJw1cTbtikC_sias)
