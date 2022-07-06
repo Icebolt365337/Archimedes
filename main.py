@@ -3,6 +3,9 @@ import discord
 import os
 import requests
 client = discord.Client()
+import aiohttp
+import poetry.lock
+import pyproject.toml
 
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
