@@ -196,4 +196,4 @@ try:
 except:
     print("No rate limit")
 
-bot.run(PASSWORD)
+bot.run(os.environ.get('token'))
