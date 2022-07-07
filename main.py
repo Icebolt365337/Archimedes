@@ -4,8 +4,6 @@ import os
 import requests
 client = discord.Client()
 import aiohttp
-import poetry.lock
-import pyproject.toml
 
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
@@ -199,4 +197,4 @@ try:
 except:
     print("No rate limit")
 
-bot.run(os.environ.get['token'])
+bot.run(os.environ.get['TOKEN'])
