@@ -4,8 +4,6 @@ import os
 import requests
 client = discord.Client()
 import aiohttp
-import boto
-conn = boto.connect_s3()
 
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
@@ -199,7 +197,6 @@ try:
 except:
     print("No rate limit")
     
-from boto.s3.connection import S3Connection
-s3 = S3Connection(os.environ['TOKEN'])
+discordToken = os.environ.get('TOKEN')
 
-bot.run(s3)
+client.run(discordToken)
