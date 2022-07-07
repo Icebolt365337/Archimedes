@@ -196,5 +196,8 @@ try:
     print(f"Rate limit {int(r.headers['Retry-After']) / 60} minutes left")
 except:
     print("No rate limit")
+    
+from boto.s3.connection import S3Connection
+s3 = S3Connection(os.environ['TOKEN'])
 
-bot.run(os.environ.get['TOKEN'])
+bot.run(s3)
