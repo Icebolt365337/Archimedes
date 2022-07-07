@@ -4,6 +4,8 @@ import os
 import requests
 client = discord.Client()
 import aiohttp
+import boto
+conn = boto.connect_s3()
 
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
