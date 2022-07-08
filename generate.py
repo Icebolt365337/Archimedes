@@ -653,7 +653,7 @@ class generate:
     quotient = str(c)+"x^2+"+str(d)+"x+"
     fquotient = str(c)+"x"+text.supscr("2")+"+"+str(d)+"x+"
     dividend = dividend.replace(" 1x", " x")
-    divisor = divisor.replace(" 1x", " x")
+    divisor = divisor.replace("1x", "x")
     quotient = quotient.replace(" 1x", " x")
     dividend = dividend+str(b*e)
     divisor = divisor+str(b)
