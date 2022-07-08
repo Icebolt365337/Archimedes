@@ -195,10 +195,4 @@ async def on_message(message):
         else:
           await message.channel.send("This is not a valid command. If in the help section, this command is most likely not available yet.");
 
-r = requests.head(url="https://discord.com/api/v1")
-try:
-    print(f"Rate limit {int(r.headers['Retry-After']) / 60} minutes left")
-except:
-    print("No rate limit")
-
 client.run(os.environ.get('TOKEN'))
