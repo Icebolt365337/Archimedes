@@ -711,10 +711,10 @@ class generate:
     return ans, fans, ques
 
   def compsq_problem():
-    b = 2*random.randint(-5, 5)
+    b = 2*random.randint(1, 5)
     c = random.randint(1, 20)
     ques = "Solve for the roots of the equation x"+text.supscr("2")+" + "+str(b)+"x + "+str(c)+" = 0 by completing the square. (± sign)"
-    interb = b/2
+    interb = int(b/2)
     interbb = interb**2
     ans = str(-1*interb)+" ± √("+str(interbb-c)+")"
     fans = str(-1*interb)+" ± sqrt("+str(interbb-c)+")"
