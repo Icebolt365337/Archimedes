@@ -189,6 +189,9 @@ async def on_message(message):
           res, fres, ques = generate.triuni_problem()
           await message.channel.send(ques)
           exp = na
+        elif message.content.startswith('!compsq'):
+          res, fres, ques, exp = generate.compsq_problem()
+          await message.channel.send(ques)
         else:
           await message.channel.send("This is not a valid command. If in the help section, this command is most likely not available yet.");
 
