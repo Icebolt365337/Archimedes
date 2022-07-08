@@ -12,7 +12,7 @@ list_of_topics = '''
     3. Functions - !fun
     4. Geometry - !geo
     5. Quadratics - !quad
-    6. Complex Numbers - !comp
+    6. Complex Numbers - !complx
     7. Probability & Statistics - !pstat
     8. Explanation - !exp (Select subtopics don't provide explanations)
     '''
@@ -122,7 +122,7 @@ async def on_message(message):
             await message.channel.send(list_of_geometry)
         elif message.content.startswith('!quad'):
             await message.channel.send(list_of_quadratics)
-        elif message.content.startswith('!comp'):
+        elif message.content.startswith('!complx'):
             await message.channel.send(list_of_complex_numbers)
         elif message.content.startswith('!pstat'):
             await message.channel.send(list_of_probability_statistics)
