@@ -713,10 +713,10 @@ class generate:
   def compsq_problem():
     b = 2*random.randint(-5, 5)
     c = random.randint(1, 20)
-    ques "Solve for the roots of the equation x"+text.supscr("2")+" + "+str(b)+"x + "+str(c)+" = 0 by completing the square. (+ sign)"
+    ques = "Solve for the roots of the equation x"+text.supscr("2")+" + "+str(b)+"x + "+str(c)+" = 0 by completing the square. (± sign)"
     interb = b/2
     interbb = interb**2
-    ans = str(-1*interb)+" + √("+str(interbb-c)+")"
-    fans = str(-1*interb)+" + sqrt("+str(interbb-c)+")"
+    ans = str(-1*interb)+" ± √("+str(interbb-c)+")"
+    fans = str(-1*interb)+" ± sqrt("+str(interbb-c)+")"
     exp = "To complete the square, we first subtract "+str(c)+" from both sides, to make it x"+text.supscr("2")+" + "+str(b)+"x = "+str(c*-1)+". Then, in order to make the left hand side a perfect square, we add "+str(interbb)+" to both sides, which allows us to factor the left hand side and end up with (x + "+str(interb)+")"+text.supscr("2")+" = "+str(interbb-c)+". Further simplifying and solving for x yields "+ans+"."
     return ans, fans, ques, exp
