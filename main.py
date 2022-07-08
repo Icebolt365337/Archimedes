@@ -4,7 +4,7 @@ import os
 import requests
 client = discord.Client()
 import aiohttp
-import yourfacce
+
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
     1. Operations - !op
@@ -102,94 +102,95 @@ async def on_message(message):
             await message.channel.send("The correct answer is " + res + ".")
         res = None
         fres = None
-    if message.content.startswith('!exp'):
-      if exp != None:
-        await message.channel.send(exp)
-        exp = None
-      else:
-        await message.channel.send("There is no question for which you are requesting an explanation. Please ask for a question first. You can find topics by sending !help.")
-    elif message.content.startswith('!help'):
-        await message.channel.send(
-          list_of_topics)
-    elif message.content.startswith('!op'):
-        await message.channel.send(list_of_operations)
-    elif message.content.startswith('!alg'):
-        await message.channel.send(list_of_algebra)
-    elif message.content.startswith('!fun'):
-        await message.channel.send(list_of_functions)
-    elif message.content.startswith('!geo'):
-        await message.channel.send(list_of_geometry)
-    elif message.content.startswith('!quad'):
-        await message.channel.send(list_of_quadratics)
-    elif message.content.startswith('!comp'):
-        await message.channel.send(list_of_complex_numbers)
-    elif message.content.startswith('!pstat'):
-        await message.channel.send(list_of_probability_statistics)
-    elif message.content.startswith('!basop'):
-        ques, res = generate.basicop_problem()
-        await message.channel.send(ques)
-        exp = na
-    elif message.content.startswith('!per'):
-        res, ques, exp = generate.perimeter_problem()
-        await message.channel.send(ques)
-    elif message.content.startswith('!area'):
-        ques, res, exp = generate.area_problem()
-        await message.channel.send(ques)
-    elif message.content.startswith('!neg'):
-        res, ques = generate.negative_problem()
-        await message.channel.send(ques)
-        exp = na
-    elif message.content.startswith('!vol'):
-      res, ques, exp = generate.volume_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!frac'):
-      res, ques, exp = generate.fraction_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!data'):
-      res, ques, exp = generate.statistics_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!sa'):
-      res, ques, exp = generate.surfarea_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!var1'):
-      res, ques, exp = generate.variable1_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!var2'):
-      res, ques, exp = generate.variable2_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!logr'):
-      res, ques, exp = generate.logrules_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!btrig'):
-      res, ques = generate.basictrig_problem()
-      await message.channel.send(ques)
-      exp = na
-    elif message.content.startswith('!rtod'):
-      res, ques, exp = generate.radtodeg_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!ineq'):
-      res, ques, exp = generate.inequality_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!powr'):
-      res, fres, ques, exp = generate.power_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!rat'):
-      res, fres, ques, exp = generate.rational_problem()
-      await message.channel.send(ques)
-    elif message.content.startswith('!pold'):
-      res, fres, ques = generate.pold_problem()
-      await message.channel.send(ques)
-      exp = na
-    elif message.content.startswith('!pyt'):
-      res, ques = generate.pyt_problem()
-      await message.channel.send(ques)
-      exp = na
-    elif message.content.startswith('!triuni'):
-      res, fres, ques = generate.triuni_problem()
-      await message.channel.send(ques)
-      exp = na
-    else:
-      await message.channel.send("This is not a valid command. If in the help section, this command is most likely not available yet.");
+    if message.content.startswith('!'):
+        if message.content.startswith('!exp'):
+          if exp != None:
+            await message.channel.send(exp)
+            exp = None
+          else:
+            await message.channel.send("There is no question for which you are requesting an explanation. Please ask for a question first. You can find topics by sending !help.")
+        elif message.content.startswith('!help'):
+            await message.channel.send(
+              list_of_topics)
+        elif message.content.startswith('!op'):
+            await message.channel.send(list_of_operations)
+        elif message.content.startswith('!alg'):
+            await message.channel.send(list_of_algebra)
+        elif message.content.startswith('!fun'):
+            await message.channel.send(list_of_functions)
+        elif message.content.startswith('!geo'):
+            await message.channel.send(list_of_geometry)
+        elif message.content.startswith('!quad'):
+            await message.channel.send(list_of_quadratics)
+        elif message.content.startswith('!comp'):
+            await message.channel.send(list_of_complex_numbers)
+        elif message.content.startswith('!pstat'):
+            await message.channel.send(list_of_probability_statistics)
+        elif message.content.startswith('!basop'):
+            ques, res = generate.basicop_problem()
+            await message.channel.send(ques)
+            exp = na
+        elif message.content.startswith('!per'):
+            res, ques, exp = generate.perimeter_problem()
+            await message.channel.send(ques)
+        elif message.content.startswith('!area'):
+            ques, res, exp = generate.area_problem()
+            await message.channel.send(ques)
+        elif message.content.startswith('!neg'):
+            res, ques = generate.negative_problem()
+            await message.channel.send(ques)
+            exp = na
+        elif message.content.startswith('!vol'):
+          res, ques, exp = generate.volume_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!frac'):
+          res, ques, exp = generate.fraction_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!data'):
+          res, ques, exp = generate.statistics_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!sa'):
+          res, ques, exp = generate.surfarea_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!var1'):
+          res, ques, exp = generate.variable1_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!var2'):
+          res, ques, exp = generate.variable2_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!logr'):
+          res, ques, exp = generate.logrules_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!btrig'):
+          res, ques = generate.basictrig_problem()
+          await message.channel.send(ques)
+          exp = na
+        elif message.content.startswith('!rtod'):
+          res, ques, exp = generate.radtodeg_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!ineq'):
+          res, ques, exp = generate.inequality_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!powr'):
+          res, fres, ques, exp = generate.power_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!rat'):
+          res, fres, ques, exp = generate.rational_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!pold'):
+          res, fres, ques = generate.pold_problem()
+          await message.channel.send(ques)
+          exp = na
+        elif message.content.startswith('!pyt'):
+          res, ques = generate.pyt_problem()
+          await message.channel.send(ques)
+          exp = na
+        elif message.content.startswith('!triuni'):
+          res, fres, ques = generate.triuni_problem()
+          await message.channel.send(ques)
+          exp = na
+        else:
+          await message.channel.send("This is not a valid command. If in the help section, this command is most likely not available yet.");
 
 r = requests.head(url="https://discord.com/api/v1")
 try:
