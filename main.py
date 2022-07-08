@@ -102,7 +102,7 @@ async def on_message(message):
             await message.channel.send("The correct answer is " + res + ".")
         res = None
         fres = None
-      elif message.content.startswith('!'):
+     elif message.content.startswith('!'):
         if message.content.startswith('!exp'):
           if exp != None:
             await message.channel.send(exp)
@@ -191,7 +191,7 @@ async def on_message(message):
           exp = na
         else:
           await message.channel.send("This is not a valid command. If in the help section, this command is most likely not available yet.");
-      else:
+     else:
         pass;
 
 r = requests.head(url="https://discord.com/api/v1")
