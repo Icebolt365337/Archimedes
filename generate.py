@@ -711,9 +711,9 @@ class generate:
     return ans, fans, ques
 
   def compsq_problem():
-    b = 2*random.randint(3, 10)
-    c = random.randint(1, 8)
-    ques = "Solve for the roots of the equation x"+text.supscr("2")+" + "+str(b)+"x + "+str(c)+" = 0 by completing the square. (± sign)"
+    b = 2*random.choice([random.randint(1,5), random.randint(-5, -1)])
+    c = random.randint(-10, b-2)
+    ques = "Solve for the roots of the equation x"+text.supscr("2")+" + "+str(b)+"x + "+str(c)+" = 0 by completing the square. (± sign, do not simplify the radical)"
     interb = int(b/2)
     interbb = interb**2
     ans = str(-1*interb)+"±√("+str(interbb-c)+")"
@@ -730,6 +730,7 @@ class generate:
     d = a*b
     ques = "Through factoring, what are the solutions to the equation x"+text.supscr("2")+"+"+str(c)+"x+"+str(d)+"=0, enter answer as a pair (a,b)?"
     ques = ques.replace("+-", "-")
+    ques = ques.replace("+0x", "")
     ans = "("+str(sol1)+","+str(sol2)+")"
     fans = "("+str(sol2)+","+str(sol1)+")"
     exp = "To factor out the equation, we need to find two numbers that multiply to "+str(d)+" and add up to "+str(c)+". These two numbers are "+str(a)+" and "+str(b)+", meaning the equation can be factored out as (x+"+str(a)+")(x+"+str(b)+"), making the solutions ("+str(sol1)+", "+str(sol2)+")."
