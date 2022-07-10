@@ -72,8 +72,6 @@ list_of_probability_statistics = '''
     1. Mean, Median, Mode, Range, MAD - !data
     2. Probability: Addition - !padd
     3. Probability: Multiplication - !pmult
-    4. Statistics: Distributions - !statd
-    5. Statistics: Z-Scores - !statz
     '''
 
 @client.event
