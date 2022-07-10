@@ -750,3 +750,4 @@ class generate:
     ques = ques.replace("-1x", "-x")
     ques = ques.replace("+-", "-")
     exp = "The quadratic formula is (-b±√b"+text.supscr("2")+"-4ac)/2a, for a quadratic equation ax"+text.supscr("2")+"+bx+c. Plugging in the appropriate values, we get the answer to be "+ans+"."
+    return ans, fans, ques, exp
