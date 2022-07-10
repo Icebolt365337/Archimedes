@@ -713,7 +713,7 @@ class generate:
   def compsq_problem():
     b = 2*random.choice([random.randint(1,5), random.randint(-5, -1)])
     c = random.randint(-10, b-2)
-    ques = "Solve for the roots of the equation x"+text.supscr("2")+" + "+str(b)+"x + "+str(c)+" = 0 by completing the square. (± sign, do not simplify the radical)"
+    ques = "Solve for the roots of the equation x"+text.supscr("2")+" + "+str(b)+"x + "+str(c)+" = 0 by completing the square (Express answer as a radical expression). (± sign, do not simplify the radical)"
     interb = int(b/2)
     interbb = interb**2
     ans = str(-1*interb)+"±√("+str(interbb-c)+")"
@@ -738,3 +738,15 @@ class generate:
     exp = "To factor out the equation, we need to find two numbers that multiply to "+str(d)+" and add up to "+str(c)+". These two numbers are "+str(a)+" and "+str(b)+", meaning the equation can be factored out as (x+"+str(a)+")(x+"+str(b)+"), making the solutions ("+str(sol1)+", "+str(sol2)+")."
     exp = exp.replace("+-", "-")
     return ans, fans, ques, exp
+  
+  def quadform_problem():
+    a = random.choice([random.randint(1,5), random.randint(-5, -1)])
+    b = random.choice([random.randint(1,5), random.randint(-5, -1)])
+    c = random.choice([random.randint(1,5), random.randint(-5, -1)])
+    ans = str(-1*b)+"±√"+str((b*b)-(4*a*c))+"/"+str(2*a)
+    fans = ans = str(-1*b)+"±sqrt"+str((b**2)-(4*a*c))+"/"+str(2*a)
+    ques = "Using the quadratic formula, solve for the roots of the quadratic equation "+str(a)+"x"+text.supscr("2")+"+"+str(b)+"x+"+str(c)+"=0. (± sign, give answer as a radical expression)
+    ques = ques.replace("+1x", "+x")
+    ques = ques.replace("-1x", "-x")
+    ques = ques.replace("+-", "-")
+    exp = "The quadratic formula is (-b±√b"+text.supscr("2")+"-4ac)/2a, for a quadratic equation ax"+text.supscr("2")+"+bx+c. Plugging in the appropriate values, we get the answer to be "+ans+"."
