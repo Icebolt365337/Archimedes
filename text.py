@@ -9,6 +9,6 @@ class text:
     sub_s = "ₐₑₖₘₙₓ₀₁₂₃₄₅₆₇₈₉₊₋₌₍₎"
     res = x.maketrans(''.join(normal), ''.join(sub_s))
     return x.translate(res)
-  def embed(title1, description1, colour1):
-    embed = discord.Embed(title=title1, description=description1, colour=colour1)
+  def embed(title1, description1):
+    embed = discord.Embed(title=title1, description=description1, colour=0x1f8afc)
     return embed
