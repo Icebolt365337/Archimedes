@@ -731,6 +731,8 @@ class generate:
     ques = "Through factoring, what are the solutions to the equation x"+text.supscr("2")+"+"+str(c)+"x+"+str(d)+"=0, enter answer as a pair (a,b)?"
     ques = ques.replace("+-", "-")
     ques = ques.replace("+0x", "")
+    ques = ques.replace("-1x", "-x")
+    ques = ques.replace("+1x", "+x")
     ans = "("+str(sol1)+","+str(sol2)+")"
     fans = "("+str(sol2)+","+str(sol1)+")"
     exp = "To factor out the equation, we need to find two numbers that multiply to "+str(d)+" and add up to "+str(c)+". These two numbers are "+str(a)+" and "+str(b)+", meaning the equation can be factored out as (x+"+str(a)+")(x+"+str(b)+"), making the solutions ("+str(sol1)+", "+str(sol2)+")."
