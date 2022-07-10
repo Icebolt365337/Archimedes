@@ -722,8 +722,8 @@ class generate:
     return ans, fans, ques, exp
 
   def factoring_problem():
-    a = random.choice([random.randint(1,5), random.randint(-5, -1)])
-    b = random.choice([random.randint(1,5), random.randint(-5, -1)])
+    a = random.randint(1,5)
+    b = random.randint(1,5)
     sol1 = -1*a
     sol2 = -1*b
     c = a+b
