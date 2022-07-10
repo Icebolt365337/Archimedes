@@ -92,7 +92,8 @@ async def on_message(message):
         return
     if (res or fres):
         if (message.content.replace(" ", "")).startswith(res or fres):
-            await message.channel.send("That's Correct!")
+            embed = text.embed("", "That's Correct!")
+            user.send(user, embed=embed)
         else:
           if (fres):
             await message.channel.send("The correct answer is " + fres + ".")
