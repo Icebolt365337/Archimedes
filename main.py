@@ -4,6 +4,7 @@ import os
 import requests
 client = discord.Client()
 import aiohttp
+import text
 
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
