@@ -722,16 +722,16 @@ class generate:
     return ans, fans, ques, exp
 
   def factoring_problem():
-    a = random.randint(1,5)
-    b = random.randint(1,5)
+    a = random.choice([random.randint(1,5), random.randint(-5, -1)])
+    b = random.choice([random.randint(1,5), random.randint(-5, -1)])
     sol1 = -1*a
     sol2 = -1*b
     c = a+b
     d = a*b
     ques = "Through factoring, what are the solutions to the equation x"+text.supscr("2")+"+"+str(c)+"x+"+str(d)+"=0, enter answer as a pair (a,b)?"
     ques = ques.replace("+-", "-")
-    ans = "("+sol1+","+sol2+")"
-    fans = "("+sol2+","+sol1+")"
+    ans = "("+str(sol1)+","+str(sol2)+")"
+    fans = "("+str(sol2)+","+str(sol1)+")"
     exp = "To factor out the equation, we need to find two numbers that multiply to "+str(d)+" and add up to "+str(c)+". These two numbers are "+str(a)+" and "+str(b)+", meaning the equation can be factored out as (x+"+str(a)+")(x+"+str(b)+"), making the solutions ("+str(sol1)+", "+str(sol2)+")."
     exp = exp.replace("+-", "-")
     return ans, fans, ques, exp
