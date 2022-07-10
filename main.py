@@ -193,6 +193,9 @@ async def on_message(message):
         elif message.content.startswith('!fac'):
           res, fres, ques, exp = generate.factoring_problem()
           await message.channel.send(ques)
+        elif message.content.startswith('!quadform'):
+          res, fres, ques, exp = generate.quadform_problem()
+          await message.channel.send(ques)
         else:
           await message.channel.send("This is not a valid command. If in the help section, this command is most likely not available yet.");
 
