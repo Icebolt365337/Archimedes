@@ -10,7 +10,7 @@ list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
     1. Operations - !op
     2. Algebraic Equations and Inequalities - !alg
-    3. Functions - !fun
+    3. Functions - !functions
     4. Geometry - !geo
     5. Quadratics - !quadratics
     6. Complex Numbers - !complx
@@ -39,7 +39,7 @@ list_of_algebra = '''
 list_of_functions = '''
     List of Function Subtopics - Type corresponding command to get problems
     1. Function Composition - !funcomp
-    2. Exponential and Logarithmic Functions - !explogfun
+    2. Exponential and Logarithmic Functions - !logexpfun
     3. Trigonometric Functions - !trigfun
     '''
 
@@ -115,7 +115,7 @@ async def on_message(message):
             await message.channel.send(list_of_operations)
         elif message.content.startswith('!alg'):
             await message.channel.send(list_of_algebra)
-        elif message.content.startswith('!fun'):
+        elif message.content.startswith('!functions'):
             await message.channel.send(list_of_functions)
         elif message.content.startswith('!geo'):
             await message.channel.send(list_of_geometry)
