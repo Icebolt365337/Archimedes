@@ -91,7 +91,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     if (res or fres):
-        if message.content.startswith(res or fres):
+        if (message.content.replace(" ", "").startswith(res or fres):
             await message.channel.send("That's Correct!")
         else:
           if (fres):
@@ -189,6 +189,9 @@ async def on_message(message):
           exp = na
         elif message.content.startswith('!compsq'):
           res, fres, ques, exp = generate.compsq_problem()
+          await message.channel.send(ques)
+        elif message.content.startswith('!fac'):
+          res, fres, ques, exp = generate.factoring_problem()
           await message.channel.send(ques)
         else:
           await message.channel.send("This is not a valid command. If in the help section, this command is most likely not available yet.");
