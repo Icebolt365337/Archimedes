@@ -471,7 +471,7 @@ class generate:
     co1 = str(co1)
     stu4 = str(stu4)
     stu5 = str(stu5)
-    ans = "x = "+x+", y = "+y
+    ans = "x="+x+",y="+y
     ques = "Given the equations "+a+"x+"+b+"y = "+ans1+" and "+c+"x+"+d+"y = "+ans2+", what does x and y equal? (Send answer in format x = ?, y = ?)"
     exp = "In order to solve for x and y, we must remove a variable to isolate the other. This can be done by multiplying one equation and subtracting it from the other. We will solve for y first. This can be done by multiplying the second equation by "+co1+". This gives us "+a+"x "+sign1+" "+stu2+"y = "+stu3+". Subtracting the second equation from the first, we get "+stu4+"y = "+stu5+". If we divide both sides by "+stu4+", we get y = "+y+". In order to solve for x, we can plug y back into any of the two equations. This gives us x = "+x+"."
     return ans, ques, exp
@@ -587,7 +587,7 @@ class generate:
       sign_1 = sign
     x = random.randint(1, 10)
     c = str((a*x)+b)
-    ans = "x "+str(sign_1)+" "+str(x)
+    ans = "x"+str(sign_1)+str(x)
     ques = "Solve the inequality "+str(a)+"x "+str(pssign)+" "+str(b_1)+" "+str(sign)+" "+str(c)+" for x."
     exp = "The inequality can be solved by isolating x, which gives us "+str(ans)+". "+exp_1
     return ans, ques, exp
@@ -716,12 +716,22 @@ class generate:
     ques = "Solve for the roots of the equation x"+text.supscr("2")+" + "+str(b)+"x + "+str(c)+" = 0 by completing the square. (± sign)"
     interb = int(b/2)
     interbb = interb**2
-    ans = str(-1*interb)+" ± √("+str(interbb-c)+")"
-    fans = str(-1*interb)+" ± sqrt("+str(interbb-c)+")"
+    ans = str(-1*interb)+"±√("+str(interbb-c)+")"
+    fans = str(-1*interb)+"±sqrt("+str(interbb-c)+")"
     exp = "To complete the square, we first subtract "+str(c)+" from both sides, to make it x"+text.supscr("2")+" + "+str(b)+"x = "+str(c*-1)+". Then, in order to make the left hand side a perfect square, we add "+str(interbb)+" to both sides, which allows us to factor the left hand side and end up with (x + "+str(interb)+")"+text.supscr("2")+" = "+str(interbb-c)+". Further simplifying and solving for x yields "+ans+"."
     return ans, fans, ques, exp
 
   def factoring_problem():
-    a = random.randint(-10, 10)
-    b = random.randint(-10, 10)
-    
+    a = random.choice([random.randint(1,5), random.randint(-5, -1)])
+    b = random.choice([random.randint(1,5), random.randint(-5, -1)])
+    sol1 = -1*a
+    sol2 = -1*b
+    c = a+b
+    d = a*b
+    ques = "Through factoring, what are the solutions to the equation x"+text.supscr("2")+"+"+str(c)+"x+"+str(d)+"=0, enter answer as a pair (a,b)?"
+    ques = ques.replace("+-", "-")
+    ans = "("+sol1+","+sol2+")"
+    fans = "("+sol2+","+sol1+")"
+    exp = "To factor out the equation, we need to find two numbers that multiply to "+str(d)+" and add up to "+str(c)+". These two numbers are "+str(a)+" and "+str(b)+", meaning the equation can be factored out as (x+"+str(a)+")(x+"+str(b)+"), making the solutions ("+str(sol1)+", "+str(sol2)+")."
+    exp = exp.replace("+-", "-")
+    return ans, fans, ques, exp
