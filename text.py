@@ -11,4 +11,4 @@ class text:
     return x.translate(res)
   def embed(title1, description1):
     embed = discord.Embed(title=title1, description=description1, colour=0x1f8afc)
-    return eembed
+    return embed
