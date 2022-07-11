@@ -102,8 +102,8 @@ async def on_message(message):
             await message.channel.send(embed=embed)
         res = None
         fres = None
-    if message.content.startswith('!'):
-        if message.content.startswith('!exp'):
+    if message.content.startswith("!"):
+        if message.content == "!exp":
           if exp != None:
             embed = text.embed("Explanation:", exp)
             await message.channel.send(embed=embed)
@@ -111,121 +111,121 @@ async def on_message(message):
           else:
             embed = text.embed("Error", "There is no question for which you are requesting an explanation. Please ask for a question first. You can find topics by sending !help.")
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!help'):
+        elif message.content == "!help":
             embed = text.embed("List Of Topics", list_of_topics)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!operations'):
+        elif message.content == "!operations":
             embed = text.embed("Operation Topics", list_of_operations)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!algebra'):
+        elif message.content == "!algebra":
             embed = text.embed("Algebra Topics", list_of_algebra)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!functions'):
+        elif message.content == "!functions":
             embed = text.embed("Function Topics", list_of_functions)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!geometry'):
+        elif message.content == "!geometry":
             embed = text.embed("Geometry Topics", list_of_geometry)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!quadratics'):
+        elif message.content == "!quadratics":
             embed = text.embed("Quadratics Topics", list_of_quadratics)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!complex'):
+        elif message.content == "!complex":
             embed = text.embed("Complex Number Topics", list_of_complex_numbers)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!probability'):
+        elif message.content == "!probability":
             embed = text.embed("Probability Topics", list_of_probability_statistics)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!basop'):
+        elif message.content == "!basop":
             ques, res = generate.basicop_problem()
             embed = text.embed("Basic Operations", ques)
             await message.channel.send(embed=embed)
             exp = na
-        elif message.content.startswith('!per'):
+        elif message.content == "!per":
             res, ques, exp = generate.perimeter_problem()
             embed = text.embed("Perimeter", ques)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!area'):
+        elif message.content == "!area":
             ques, res, exp = generate.area_problem()
             embed = text.embed("Area", ques)
             await message.channel.send(embed=embed)
-        elif message.content.startswith('!neg'):
+        elif message.content == "!neg":
             res, ques = generate.negative_problem()
             embed = text.embed("Negative Numbers", ques)
             await message.channel.send(embed=embed)
             exp = na
-        elif message.content.startswith('!vol'):
+        elif message.content == "!vol":
           res, ques, exp = generate.volume_problem()
           embed = text.embed("Volume", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!frac'):
+        elif message.content == "!frac":
           res, ques, exp = generate.fraction_problem()
           embed = text.embed("Fractions", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!data'):
+        elif message.content == "!data":
           res, ques, exp = generate.statistics_problem()
           embed = text.embed("Basic Statistics", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!sa'):
+        elif message.content == "!sa":
           res, ques, exp = generate.surfarea_problem()
           embed = text.embed("Surface Area", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!var1'):
+        elif message.content == "!var1":
           res, ques, exp = generate.variable1_problem()
           embed = text.embed("Solving Linear Equations - 1 Variable", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!var2'):
+        elif message.content == "!var2":
           res, ques, exp = generate.variable2_problem()
           embed = text.embed("Solving Linear Equations - 2 Variables", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!logr'):
+        elif message.content == "!logr":
           res, ques, exp = generate.logrules_problem()
           embed = text.embed("Logarithmic Rules", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!btrig'):
+        elif message.content == "!btrig":
           res, ques = generate.basictrig_problem()
           embed = text.embed("Basic Trigonometry", ques)
           await message.channel.send(embed=embed)
           exp = na
-        elif message.content.startswith('!rtod'):
+        elif message.content == "!rtod":
           res, ques, exp = generate.radtodeg_problem()
           embed = text.embed("Radians/Degrees Conversion", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!ineq'):
+        elif message.content == "!ineq":
           res, ques, exp = generate.inequality_problem()
           embed = text.embed("Solving Inequalities", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!powr'):
+        elif message.content == "!powr":
           res, fres, ques, exp = generate.power_problem()
           embed = text.embed("Exponential Rules", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!rat'):
+        elif message.content == "!rat":
           res, fres, ques, exp = generate.rational_problem()
           embed = text.embed("Rationalizing Denominators", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!pold'):
+        elif message.content == "!pold":
           res, fres, ques = generate.pold_problem()
           embed = text.embed("Polynomial Division", ques)
           await message.channel.send(embed=embed)
           exp = na
-        elif message.content.startswith('!pyt'):
+        elif message.content == "!pyt":
           res, ques = generate.pyt_problem()
           embed = text.embed("Pythagorean Theorem", ques)
           await message.channel.send(embed=embed)
           exp = na
-        elif message.content.startswith('!triuni'):
+        elif message.content == "!triuni":
           res, fres, ques = generate.triuni_problem()
           embed = text.embed("Trigonometry - Unit Circle", ques)
           await message.channel.send(embed=embed)
           exp = na
-        elif message.content.startswith('!compsq'):
+        elif message.content == "!compsq":
           res, fres, ques, exp = generate.compsq_problem()
           embed = text.embed("Completing the Square", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!fac'):
+        elif message.content == "!fac":
           res, fres, ques, exp = generate.factoring_problem()
           embed = text.embed("Quadratics - Factoring", ques)
           await message.channel.send(embed=embed)
-        elif message.content.startswith('!quadform'):
+        elif message.content == "!quadform":
           res, fres, ques, exp = generate.quadform_problem()
           embed = text.embed("Quadratic Formula", ques)
           await message.channel.send(embed=embed)
