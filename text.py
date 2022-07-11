@@ -1,3 +1,5 @@
+import discord
+
 class text:
   def supscr(x):
     normal = "abcxyz0123456789+-=()"
