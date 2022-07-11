@@ -8,13 +8,13 @@ import text
 
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
-    1. Operations - !op
-    2. Algebraic Equations and Inequalities - !alg
+    1. Operations - !operations
+    2. Algebraic Equations and Inequalities - !algebra
     3. Functions - !functions
-    4. Geometry - !geo
+    4. Geometry - !geometry
     5. Quadratics - !quadratics
-    6. Complex Numbers - !complx
-    7. Probability & Statistics - !pstat
+    6. Complex Numbers - !complex
+    7. Probability & Statistics - !probability
     8. Explanation - !exp (Select subtopics don't provide explanations)
     '''
 
@@ -89,7 +89,8 @@ async def on_message(message):
         return
     if (res or fres):
         if message.content.replace(' ', '').startswith(res) or message.content.replace(' ', '').startswith(fres):
-            await message.channel.send("That's Correct!")
+            embed = text.embed("", "That's Correct!")
+            await message.channel.send(embed=embed)
         else:
           if (res):
             await message.channel.send("The correct answer is " + res + ".")
@@ -107,19 +108,19 @@ async def on_message(message):
         elif message.content.startswith('!help'):
             await message.channel.send(
               list_of_topics)
-        elif message.content.startswith('!op'):
+        elif message.content.startswith('!operations'):
             await message.channel.send(list_of_operations)
-        elif message.content.startswith('!alg'):
+        elif message.content.startswith('!algebra'):
             await message.channel.send(list_of_algebra)
         elif message.content.startswith('!functions'):
             await message.channel.send(list_of_functions)
-        elif message.content.startswith('!geo'):
+        elif message.content.startswith('!geometry'):
             await message.channel.send(list_of_geometry)
         elif message.content.startswith('!quadratics'):
             await message.channel.send(list_of_quadratics)
-        elif message.content.startswith('!complx'):
+        elif message.content.startswith('!complex'):
             await message.channel.send(list_of_complex_numbers)
-        elif message.content.startswith('!pstat'):
+        elif message.content.startswith('!probability'):
             await message.channel.send(list_of_probability_statistics)
         elif message.content.startswith('!basop'):
             ques, res = generate.basicop_problem()
