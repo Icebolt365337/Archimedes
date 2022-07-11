@@ -736,8 +736,8 @@ class generate:
     ques = ques.replace("+1x", "+x")
     ans = "("+str(sol1)+","+str(sol2)+")"
     fans = "("+str(sol2)+","+str(sol1)+")"
-    ans = ans.replace("("+a+","+a+")", "("+a+")")
-    fans = fans.replace("("+a+","+a+")", "("+a+")")
+    ans = ans.replace("("+str(a)+","+str(a)+")", "("+str(a)+")")
+    fans = fans.replace("("+str(a)+","+str(a)+")", "("+str(a)+")")
     exp = "To factor out the equation, we need to find two numbers that multiply to "+str(d)+" and add up to "+str(c)+". These two numbers are "+str(a)+" and "+str(b)+", meaning the equation can be factored out as (x+"+str(a)+")(x+"+str(b)+"), making the solutions ("+str(sol1)+", "+str(sol2)+")."
     exp = exp.replace("+-", "-")
     return ans, fans, ques, exp
@@ -747,10 +747,12 @@ class generate:
     b = random.choice([random.randint(1,5), random.randint(-5, -1)])
     c = random.choice([random.randint(1,5), random.randint(-5, -1)])
     ans = str(-1*b)+"±√"+str((b*b)-(4*a*c))+"/"+str(2*a)
-    fans = ans = str(-1*b)+"±sqrt"+str((b**2)-(4*a*c))+"/"+str(2*a)
+    fans = ans = str(-1*b)+"±sqrt("+str((b**2)-(4*a*c))+")/"+str(2*a)
     ques = "Using the quadratic formula, solve for the roots of the quadratic equation "+str(a)+"x"+text.supscr("2")+"+"+str(b)+"x+"+str(c)+"=0. (± sign, give answer as a radical expression)"
     ques = ques.replace("+1x", "+x")
     ques = ques.replace("-1x", "-x")
     ques = ques.replace("+-", "-")
+    ans = ans.replace("±√0", "")
+    fans = fans.replace("±sqrt(0)", "")
     exp = "The quadratic formula is (-b±√b"+text.supscr("2")+"-4ac)/2a, for a quadratic equation ax"+text.supscr("2")+"+bx+c. Plugging in the appropriate values, we get the answer to be "+ans+"."
     return ans, fans, ques, exp
