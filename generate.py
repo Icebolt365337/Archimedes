@@ -39,6 +39,7 @@ class generate:
       a = str(a)
       b = str(b)
       c = "What is "+b+"/"+a+"?"
+      d = str(d)
       return c, d
 
   def negative_problem():
