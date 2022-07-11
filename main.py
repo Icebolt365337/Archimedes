@@ -75,10 +75,6 @@ list_of_probability_statistics = '''
     3. Probability: Multiplication - !pmult
     '''
 
-@client.event
-async def on_ready():
-    print("Time to test!")
-
 res = None
 exp = None
 fres = None
@@ -92,7 +88,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     if (res or fres):
-        if message.content.startswith(res or fres):
+        if message.content.replace(' ', '').startswith(res or fres):
             await message.channel.send("That's Correct!")
         else:
           if (res):
