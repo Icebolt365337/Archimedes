@@ -110,6 +110,7 @@ async def on_message(message):
     global exp
     global fres
     global embed
+    global tracker
     if message.author == client.user:
         return
     if (res or fres):
