@@ -89,7 +89,7 @@ async def on_message(message):
         return
     if (res or fres):
         if message.content.replace(' ', '').startswith(res) or message.content.replace(' ', '').startswith(fres):
-            embed = text.embed("", "That's Correct!")
+            embed = text.eembed("", "That's Correct!")
             await message.channel.send(embed=embed)
         else:
           if (res):
