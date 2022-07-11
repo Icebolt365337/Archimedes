@@ -290,7 +290,7 @@ async def on_message(message):
           embed = text.embed("Quadratic Formula", ques)
           await message.channel.send(embed=embed)
         else:
-          embed = text.embed("", "This is not a valid command. If in the help section, this command is most likely not available yet.")
+          embed = text.embed("", "This is not a valid command. If in the topics section, this command is most likely not finished yet.")
           await message.channel.send(embed=embed)
 
 client.run(os.environ.get('TOKEN'))
