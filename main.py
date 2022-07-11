@@ -88,7 +88,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     if (res or fres):
-        if message.content.replace(' ', '').startswith(res or fres):
+        if message.content.replace(' ', '').startswith(res) or message.content.replace(' ', '').startswith(fres):
             await message.channel.send("That's Correct!")
         else:
           if (res):
