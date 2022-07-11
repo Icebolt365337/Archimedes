@@ -151,9 +151,21 @@ async def on_message(message):
             embed = text.embed("Error", "There is no question for which you are requesting an explanation. Please ask for a question first. You can find topics by sending !help.")
             await message.channel.send(embed=embed)
         elif message.content == "!correct":
+            try:
+                ctracker[str(message.author)]
+                wtracker[str(message.author)]
+            except KeyError:
+                ctracker[str(message.author)] = 0
+                wtracker[str(message.author)] = 0
             embed = text.embed("Number of Correct Answers", "You have answered "+str(ctracker[str(message.author)])+" questions correct out of "+str(ctracker[str(message.author)]+wtracker[str(message.author)])+" total questions.")
             await message.channel.send(embed=embed)
         elif message.content == "!wrong":
+            try:
+                ctracker[str(message.author)]
+                wtracker[str(message.author)]
+            except KeyError:
+                ctracker[str(message.author)] = 0
+                wtracker[str(message.author)] = 0
             embed = text.embed("Number of Wrong Answers", "You have answered "+str(wtracker[str(message.author)])+" questions correct out of "+str(ctracker[str(message.author)]+wtracker[str(message.author)])+" total questions.")
             await message.channel.send(embed=embed)
         elif message.content == "!help":
