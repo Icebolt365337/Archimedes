@@ -6,6 +6,29 @@ client = discord.Client()
 import aiohttp
 from text import text
 
+intents = discord.Intents
+intents.bans = False
+intents.dm_messages = False
+intents.dm_reactions = False
+intents.dm_typing = False
+intents.emojis = False
+intents.emojis_and_stickers = False
+intents.guild_messages = True
+intents.guild_reactions = False
+intents.guild_scheduled_events = False
+intents.guild_typing = False
+intents.guilds = True
+intents.integrations = False
+intents.invites = False
+intents.messages = False
+intents.reactions = False
+intents.typing = False
+intents.voice_states = False
+intents.webhooks = False
+intents.members = False
+intents.message_content = True
+intents.presences = False
+
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
     1. Operations - !operations
