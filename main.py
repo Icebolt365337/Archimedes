@@ -117,6 +117,10 @@ async def on_message(message):
         if message.content.replace(' ', '').startswith(res) or message.content.replace(' ', '').startswith(fres):
             embed = text.embed("That's Correct!", "")
             await message.channel.send(embed=embed)
+            try:
+                tracker[str(message.author)] += 1
+            except KeyError:
+                tracker[str(message.author)] = 1
         else:
           if (res):
             embed = text.embed("Wrong!", "The correct answer is " + res + ".")
