@@ -748,7 +748,7 @@ class generate:
     c = random.choice([random.randint(1,5), random.randint(-5, -1)])
     ans = str(-1*b)+"±√"+str((b*b)-(4*a*c))+"/"+str(2*a)
     fans = ans = str(-1*b)+"±sqrt("+str((b**2)-(4*a*c))+")/"+str(2*a)
-    ques = "Using the quadratic formula, solve for the roots of the quadratic equation "+str(a)+"x"+text.supscr("2")+"+"+str(b)+"x+"+str(c)+"=0. (± sign, give answer as a radical expression)"
+    ques = "Using the quadratic formula, solve for the roots of the quadratic equation "+str(a)+"x"+text.supscr("2")+"+"+str(b)+"x+"+str(c)+"=0. (± sign, give answer as an unsimplified radical expression)"
     ques = ques.replace("+1x", "+x")
     ques = ques.replace("-1x", "-x")
     ques = ques.replace("+-", "-")
