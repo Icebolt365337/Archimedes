@@ -4,7 +4,7 @@ import os
 import requests
 client = discord.Client()
 import aiohttp
-import text
+from text import text
 
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
@@ -89,7 +89,7 @@ async def on_message(message):
         return
     if (res or fres):
         if message.content.replace(' ', '').startswith(res) or message.content.replace(' ', '').startswith(fres):
-            embed = text.eembed("", "That's Correct!")
+            embed = text.embed("", "That's Correct!")
             await message.channel.send(embed=embed)
         else:
           if (res):
