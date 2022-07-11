@@ -112,7 +112,7 @@ async def on_message(message):
             embed = text.embed("", "There is no question for which you are requesting an explanation. Please ask for a question first. You can find topics by sending !help.")
             await message.channel.send(embed=embed)
         elif message.content.startswith('!help'):
-            embed = text.embed("", list_of_topics)
+            embed = text.embed("List Of Topics", list_of_topics)
             await message.channel.send(embed=embed)
         elif message.content.startswith('!operations'):
             embed = text.embed("", list_of_operations)
