@@ -29,6 +29,14 @@ intents.members = False
 intents.message_content = True
 intents.presences = False
 
+help_text = '''
+    Important Commands
+    1. List of Topics - !topics
+    2. # of Correct Answers - !correct
+    3. # of Wrong Answers - !wrong
+    4. Explanation - !exp (Some subtopics don't provide explanations)
+    '''
+
 list_of_topics = '''
     List of Topics - Type corresponding command to get subtopics
     1. Operations - !operations
@@ -103,6 +111,8 @@ exp = None
 fres = None
 embed = None
 na = "There are no explanations for this subtopic."
+ctracker = {}
+wtracker = {}
 
 @client.event
 async def on_message(message):
@@ -110,7 +120,8 @@ async def on_message(message):
     global exp
     global fres
     global embed
-    global tracker
+    global ctracker
+    global wtracker
     if message.author == client.user:
         return
     if (res or fres):
@@ -118,16 +129,16 @@ async def on_message(message):
             embed = text.embed("That's Correct!", "")
             await message.channel.send(embed=embed)
             try:
-                tracker[str(message.author)] += 1
+                ctracker[str(message.author)] += 1
             except KeyError:
-                tracker[str(message.author)] = 1
+                ctracker[str(message.author)] = 1
         else:
-          if (res):
             embed = text.embed("Wrong!", "The correct answer is " + res + ".")
             await message.channel.send(embed=embed)
-          else:
-            embed = text.embed("Wrong!", "The correct answer is " + fres + ".")
-            await message.channel.send(embed=embed)
+            try:
+                wtracker[str(message.author)] += 1
+            except KeyError:
+                wtracker[str(message.author)] = 1
         res = None
         fres = None
     if message.content.startswith("!"):
@@ -139,7 +150,16 @@ async def on_message(message):
           else:
             embed = text.embed("Error", "There is no question for which you are requesting an explanation. Please ask for a question first. You can find topics by sending !help.")
             await message.channel.send(embed=embed)
+        elif message.content == "!correct":
+            embed = text.embed("Number of Correct Answers", "You have answered "+str(ctracker[str(message.author)])+" questions correct out of "+str(ctracker[str(message.author)]+wtracker[str(message.author)])+" total questions.")
+            await message.channel.send(embed=embed)
+        elif message.content == "!wrong":
+            embed = text.embed("Number of Wrong Answers", "You have answered "+str(wtracker[str(message.author)])+" questions correct out of "+str(ctracker[str(message.author)]+wtracker[str(message.author)])+" total questions.")
+            await message.channel.send(embed=embed)
         elif message.content == "!help":
+            embed = text.embed("Information", help_text)
+            await message.channel.send(embed=embed)
+        elif message.content == "!topics":
             embed = text.embed("List Of Topics", list_of_topics)
             await message.channel.send(embed=embed)
         elif message.content == "!operations":
