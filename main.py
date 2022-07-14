@@ -125,7 +125,7 @@ async def on_message(message):
     if message.author == client.user:
         return
     if (res or fres):
-        if message.content.replace(' ', '').startswith(res) or ((fres) && message.content.replace(' ', '').startswith(fres)):
+        if message.content.replace(' ', '').startswith(res) or ((fres) and message.content.replace(' ', '').startswith(fres)):
             embed = text.embed("That's Correct!", "")
             await message.channel.send(embed=embed)
             try:
