@@ -71,7 +71,7 @@ list_of_functions = '''
     List of Function Subtopics - Type corresponding command to get problems
     1. Function Composition - !funcomp
     2. Exponential and Logarithmic Functions - !logexpfun
-    3. Trigonometric Functions - !trigfun
+    3. Trigonometric Functions - !trigfun (Not available yet)
     '''
 
 list_of_geometry = '''
@@ -95,15 +95,15 @@ list_of_quadratics = '''
 
 list_of_complex_numbers = '''
     List of Complex Number Subtopics - Type corresponding command to get problems
-    1. Complex Number Conjugates - !comcon
-    2. Complex Number Roots - !comroot
+    1. Complex Number Conjugates - !comcon (Not available yet)
+    2. Complex Number Roots - !comroot (Not available yet)
     '''
 
 list_of_probability_statistics = '''
     List of Probability and Statistics Subtopics - Type corresponding command to get problems
     1. Mean, Median, Mode, Range, MAD - !data
-    2. Probability: Addition - !padd
-    3. Probability: Multiplication - !pmult
+    2. Probability: Addition - !padd (Not available yet)
+    3. Probability: Multiplication - !pmult (Not available yet)
     '''
 
 res = None
