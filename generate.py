@@ -651,8 +651,8 @@ class generate:
     e = random.randint(1, 10)
     dividend = str(a*c)+"x"+ text.supscr("3")+"+"+str((a*d)+(b*c))+"x"+text.supscr("2")+"+"+str((a*e)+(b*d))+"x+"
     divisor = str(a)+"x+"
-    quotient = str(c)+"x^2+"+str(d)+"x+"
-    fquotient = str(c)+"x"+text.supscr("2")+"+"+str(d)+"x+"
+    fquotient = str(c)+"x^2+"+str(d)+"x+"
+    quotient = str(c)+"x"+text.supscr("2")+"+"+str(d)+"x+"
     dividend = dividend.replace(" 1x", " x")
     divisor = divisor.replace("1x", "x")
     quotient = quotient.replace(" 1x", " x")
