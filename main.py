@@ -133,7 +133,7 @@ async def on_message(message):
             except KeyError:
                 ctracker[str(message.author)] = 1
         else:
-            embed = text.embed("Wrong!", "The correct answer is " + res + ".")
+            embed = text.embed("Not quite right...", "The correct answer is " + res + ".")
             await message.channel.send(embed=embed)
             try:
                 wtracker[str(message.author)] += 1
