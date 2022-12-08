@@ -5,6 +5,13 @@ import requests
 client = discord.Client()
 import aiohttp
 from text import text
+from http.server import HTTPServer
+import os
+
+port = os.getenv('PORT', 3000)
+
+server = HTTPServer(('0.0.0.0', port), MyServer)
+server.serve_forever()
 
 intents = discord.Intents
 intents.bans = False
