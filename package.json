@@ -22,7 +22,6 @@
   },
   "homepage": "https://github.com/Icebolt365337/Archimedes/blob/main/README.md",
   "dependencies": {
-    "charset-normalizer":"^2.1.0",
     "docopt":"^0.6.2",
     "idna":"^3.3",
     "pipreqs":"^0.4.11",
