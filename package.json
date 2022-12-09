@@ -22,5 +22,6 @@
   },
   "homepage": "https://github.com/Icebolt365337/Archimedes/blob/main/README.md",
   "dependencies": {
+    "express": "^4.18.1"
   }
 }
